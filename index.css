@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid_container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: "header"         
+                        "main"                
+                       "footer";  
+  grid-template-rows: auto 1fr 200px;   
+  background-color: rgba(233, 184, 255, 0.473);             
+}
+
+.header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-area: header;
+}
+
+.header__container {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  padding-bottom: 20px;
+}
+
+.list {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: space-around;
+  justify-items: center;
+  gap: 10px;
+  list-style: none;
+  padding-top: 20px;
+}
+
+.button {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  border: none;
+  background-color: rgb(136, 207, 165);
+  padding: 10px 15px; 
+  border-radius: 20%/50%;
+  transition-property: all;
+  transition-duration: 3s;
+}
+
+.button:hover {
+  transform: scale(1.2);
+  background-color: goldenrod;
+  color: black;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  align-items: flex-start;
+  justify-items: center;
+}
+
+.main__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, 200px);
+  grid-auto-rows: minmax(200px, 1fr);
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.main__child{
+  display: grid;
+  padding-top: 20px;
+  background-color: rgb(165, 51, 182);
+  color: aliceblue;
+  font-size: 20px;
+  align-items: center;
+  justify-items: center;
+  transition-property: all;
+  transition-duration: 4s;
+}
+
+.main__child:hover {
+  transform: rotate(180deg);
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+}
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  padding: 20px 10px 20px 10px;
+  align-items: flex-start;
+}
+
+.animation {
+  background-color: darkorange;
+  justify-self: left;
+  padding: 25px;
+  border-radius: 100%;
+  animation-name: ball;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes ball {
+  0%{
+    background-color: darkorange;
+    transform: translate(0,20px);
+  }
+
+  10%{
+    background-color: hotpink;
+    transform: translate(130px,90px);
+  }
+
+  20%{
+    background-color: red;
+    transform: translate(260px,0);
+  }
+
+  30%{
+    background-color: firebrick;
+    transform: translate(390px,90px);
+  }
+
+  40%{
+    background-color: brown;
+    transform: translate(520px,0);
+  }
+
+  50%{
+    background-color: black;
+    transform: translate(650px,90px);
+  }
+
+  60%{
+    background-color: slategrey;
+    transform: translate(780px,0);
+  }
+
+  70%{
+    background-color: green;
+    transform: translate(910px,90px);
+  }
+
+  80%{
+    background-color: chartreuse;
+    transform: translate(1000px,0);
+  }
+
+  90%{
+    background-color: yellow;
+    transform: translate(1100px,90px);
+  }
+
+  100%{
+    background-color: gold;
+    transform: translate(1130px,0);
+  }
+}
+
+.animation:hover {
+  animation-play-state: paused;
+}
